@@ -72,10 +72,8 @@ app.use(express.json())
     }
     
 
-app.get('/', async (res) => {
-    res.status(200).json({
-        'msg': 'hello world'
-    })
+app.get('/', async (req, res) => {
+    res.status(200).json({'msg': 'hello world'})
 })
 
 app.get('/device', async (req, res) => {
