@@ -10,19 +10,9 @@ const { MONGO_URL } = process.env
 
 const port = 3000 || process.env.PORT
 
-const connectDB = async ( req, res ) => { 
-    try {
-        mongoose
-        .connect(
-            'mongodb+srv://yogapratamapangestu:yogapratamapangestu@cluster0.9u9ljjk.mongodb.net/smarthome?retryWrites=true&w=majority'
-            )
-        .then(() => console.log("MongoDB is  connected successfully"))
-    } catch (error) {
-        console.error(error)
-    }
-}
-
-   
+app.use(cors())
+app.use(express.urlencoded({extended: false}));
+app.use(express.json())
 
     const DeviceSchema = new mongoose.Schema({
         name: {
@@ -69,9 +59,18 @@ const connectDB = async ( req, res ) => {
     const Sensor = mongoose.model("Sensor", SensorSchema)
 
 
-app.use(cors())
-
-app.use(express.json())
+    const connectDB = async ( req, res ) => { 
+        try {
+            mongoose
+            .connect(
+                'mongodb+srv://yogapratamapangestu:yogapratamapangestu@cluster0.9u9ljjk.mongodb.net/smarthome?retryWrites=true&w=majority'
+                )
+            .then(() => console.log("MongoDB is  connected successfully"))
+        } catch (error) {
+            console.error(error)
+        }
+    }
+    
 
 app.get('/', async (res) => {
     res.statusCode(200).json({
