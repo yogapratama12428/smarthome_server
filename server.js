@@ -231,7 +231,7 @@ app.delete('/sensor/:id', async (req, res) => {
 })
 
 
-app.listen(PORT, () => {
+app.listen(PORT || 3000, () => {
     console.log('listening on port ' + PORT)
     
 })
