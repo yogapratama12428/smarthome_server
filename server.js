@@ -6,7 +6,9 @@ import mongoose from 'mongoose';
 
 const app = express()
 
-const { MONGO_URL, PORT } = process.env
+const { MONGO_URL } = process.env
+
+const port = 3000 || process.env.PORT
 
 const connectDB = async ( req, res ) => { 
     try {
@@ -238,7 +240,7 @@ app.delete('/sensor/:id', async (req, res) => {
 })
 
 
-app.listen(PORT || 3000, () => {
+app.listen( port , () => {
     connectDB()
-    console.log('listening on port ' + PORT)
+    console.log('listening on port ' + port)
 })
