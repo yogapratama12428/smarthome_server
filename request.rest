@@ -1,3 +1,5 @@
+###
+GET https://expensive-tights-fly.cyclic.app/
 ### GET DEVICE 
 GET http://localhost:5000/device
 

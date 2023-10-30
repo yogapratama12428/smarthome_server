@@ -61,9 +61,7 @@ const { MONGO_URL, PORT } = process.env
     const Sensor = mongoose.model("Sensor", SensorSchema)
 
 
-app.use(cors({
-    origin: 'http://localhost:5000'
-}))
+app.use(cors())
 
 app.use(express.json())
 
