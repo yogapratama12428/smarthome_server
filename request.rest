@@ -1,7 +1,7 @@
 ###
 GET https://expensive-tights-fly.cyclic.app/
 ### GET DEVICE 
-GET http://localhost:5000/device
+GET http://localhost:3000/device
 
 ### GET DEVICE BY ID
 GET http://localhost:5000/device/653f5c8b5288015e74c29c7d
@@ -29,7 +29,7 @@ DELETE http://localhost:5000/device/653f512c0be39bf843106fab
 Content-Type: application/json
 
 ### GET SENSOR 
-GET http://localhost:5000/sensor
+GET http://localhost:3000/sensor
 
 ### GET SENSOR BY ID
 GET http://localhost:5000/sensor/653f5da3a13396104e5bbcc6

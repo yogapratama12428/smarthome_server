@@ -13,10 +13,9 @@ const port = 3000 || process.env.PORT
 const connectDB = async ( req, res ) => { 
     try {
         mongoose
-        .connect(MONGO_URL, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        })
+        .connect(
+            'mongodb+srv://yogapratamapangestu:yogapratamapangestu@cluster0.9u9ljjk.mongodb.net/smarthome?retryWrites=true&w=majority'
+            )
         .then(() => console.log("MongoDB is  connected successfully"))
     } catch (error) {
         console.error(error)
