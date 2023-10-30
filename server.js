@@ -63,7 +63,7 @@ app.use(express.json())
         try {
             mongoose
             .connect(
-                'mongodb+srv://yogapratamapangestu:yogapratamapangestu@cluster0.9u9ljjk.mongodb.net/smarthome?retryWrites=true&w=majority'
+               MONGO_URL
                 )
             .then(() => console.log("MongoDB is  connected successfully"))
         } catch (error) {
@@ -73,7 +73,7 @@ app.use(express.json())
     
 
 app.get('/', async (res) => {
-    res.statusCode(200).json({
+    res.status(200).json({
         'msg': 'hello world'
     })
 })
